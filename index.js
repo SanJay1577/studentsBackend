@@ -13,4 +13,4 @@ app.use(express.json());
 //studers routers
 app.use("/students",studentsRouter)
 //starting ther server
-app.listen(PORT, ()=>console.log("server running in localhost:9090"))
+app.listen(PORT, ()=>console.log("server running in localhost:9090")) 
