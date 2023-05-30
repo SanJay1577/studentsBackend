@@ -1,6 +1,8 @@
 import express from "express"
 import dotenv from "dotenv"
 import { studentsRouter } from "./Routers/students.js";
+import { userRouter } from "./Routers/users.js";
+import { isAuthenticated } from "./Authentication/auth.js";
 
 //confgure the environment
 dotenv.config();
@@ -11,6 +13,7 @@ const app = express();
 app.use(express.json());
 
 //studers routers
-app.use("/students",studentsRouter)
+app.use("/students",isAuthenticated,studentsRouter)
+app.use("/users",userRouter )
 //starting ther server
 app.listen(PORT, ()=>console.log("server running in localhost:9090")) 

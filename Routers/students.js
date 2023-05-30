@@ -6,7 +6,7 @@ import {
   getStudentsById,
   updateStudentData,
 } from "../Controllers/students.js";
-
+import jwt from "jsonwebtoken";
 const router = express.Router();
 
 router.get("/all", async (req, res) => {
